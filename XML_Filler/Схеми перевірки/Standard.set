@@ -1,0 +1,64 @@
+#Standard reading scheme
+
+-group:ExecutorInfo:Інформація_про_виконавця
+-single:required -info:CompanyName:Назва_виконавця -xpath://AdditionalPart/InfoLandWork/Executor/CompanyName
+-single:required -info:Edrpou:Код_ЄДРПОУ -xpath://AdditionalPart/InfoLandWork/Executor/EDRPOU
+-single:required -info:LicenseNumber:Номер_ліцензії -xpath://AdditionalPart/InfoLandWork/Executor/License/LicenseNumber
+-single:required:helper -info:LicenseIssuedDate:Дата_ліцензії -xpath://AdditionalPart/InfoLandWork/Executor/License/LicenseIssuedDate
+-divider:Керівник
+-single:required -info:ChiefLastName:Прізвище_керівника -xpath://AdditionalPart/InfoLandWork/Executor/Chief/ChiefName/LastName
+-single:required -info:ChiefFirstName:Ім'я_керівника -xpath://AdditionalPart/InfoLandWork/Executor/Chief/ChiefName/FirstName
+-single:optional -info:ChiefMiddleName:По-батькові_керівника -xpath://AdditionalPart/InfoLandWork/Executor/Chief/ChiefName/MiddleName
+-divider:Виконавець
+-single:required -info:ExecutorLastName:Прізвище_виконавця -xpath://AdditionalPart/InfoLandWork/Executor/Executor/ExecutorName/LastName
+-single:required -info:ExecutorFirstName:Ім'я_виконавця -xpath://AdditionalPart/InfoLandWork/Executor/Executor/ExecutorName/FirstName
+-single:optional -info:ExecutorMiddleName:По-батькові_виконавця -xpath://AdditionalPart/InfoLandWork/Executor/Executor/ExecutorName/MiddleName
+-divider:Адреса
+-single:required -info:ExecutorRegion:Область -xpath://AdditionalPart/InfoLandWork/Executor/Address/Region
+-single:required -info:ExecutorDistrict:Район -xpath://AdditionalPart/InfoLandWork/Executor/Address/District
+-single:required -info:ExecutorSettlement:Населений_пункт -xpath://AdditionalPart/InfoLandWork/Executor/Address/Settlement
+-single:optional -info:ExecutorStreet:Вулиця -xpath://AdditionalPart/InfoLandWork/Executor/Address/Street
+-single:optional -info:ExecutorBuilding:Будинок -xpath://AdditionalPart/InfoLandWork/Executor/Address/Building
+
+-group:ParcelInfo:Інформація_про_земельну_ділянку
+-single:required -info:Koatuu:КОАТУУ -xpath://InfoPart/CadastralZoneInfo/KOATUU
+-single:required -info:CadastralZone:Зона -xpath://InfoPart/CadastralZoneInfo/CadastralZoneNumber
+-single:required -info:CadastralQuarter:Квартал -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/CadastralQuarterNumber
+-single:required -info:ParcelID:Номер_ділянки -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/ParcelMetricInfo/ParcelID
+-single:required:helper -info:ParcelCategory:Категорія_земель -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/CategoryPurposeInfo/Category
+-single:required:helper -info:ParcelPurpose:Цільове_призначення -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/CategoryPurposeInfo/Purpose
+-single:required -info:ParcelUse:Використання -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/CategoryPurposeInfo/Use
+-single:required:helper -info:ParcelOwnershipCode:Тип_власності -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/OwnershipInfo/Code
+-divider:Метрична_інформація
+-single:required -info:ParcelArea:Площа_ділянки -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/ParcelMetricInfo/Area/Size
+-single:required -info:ParcelAreaMeasurementUnit:Одиниці_виміру -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/ParcelMetricInfo/Area/MeasurementUnit
+
+-group:ProprietorsInfo:Інформація_про_власників
+-multiple:required -info:ProprietorLastName:Прізвище_власника -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/FullName/LastName://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/FullName/LastName
+-multiple:required -info:ProprietorFirstName:Ім'я_власника -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/FullName/FirstName://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/FullName/FirstName
+-multiple:required -info:ProprietorMiddleName:По-батькові_власника -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/FullName/MiddleName://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/FullName/MiddleName
+-multiple:required -info:ProprietorTaxNumber:Ідентифікаційний_код -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/TaxNumber://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/TaxNumber
+-multiple:required -info:ProprietorPassportSeries:Серія_паспорта -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/Passport/PassportSeries://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/Passport/PassportSeries
+-multiple:required -info:ProprietorPassportNumber:Номер_паспорта -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/Passport/PassportNumber://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/Passport/PassportNumber
+-multiple:required -info:ProprietorPassportAuthority:Паспорт_видано -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/Passport/IssuanceAuthority://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/Passport/IssuanceAuthority
+-multiple:required:helper -info:ProprietorPassportIssuedDate:Паспорт_дата -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo:Authentication/NaturalPerson/Passport/PassportIssuedDate://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/Proprietors/ProprietorInfo/Authentication/NaturalPerson/Passport/PassportIssuedDate
+
+-group:TechnicalDocumentation:Технічна_документація
+-single:required:helper -info:TechnicalDocumentationInfo:Тип_документації -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/TechnicalDocumentationInfo/DocumentationType
+-single:required:helper -info:TechnicalDocumentationDraftingDate:Дата_складання -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/TechnicalDocumentationInfo/DraftingDate
+-multiple:optional -info:TechnicalDocument:Документ -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/TechnicalDocumentationInfo/DocumentList:.://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/TechnicalDocumentationInfo/DocumentList
+
+-group:StateActInfo:Державний_Акт
+-single:required -info:StateActSeries:Держакт_серія -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/StateActForm/Series
+-single:required -info:StateActNumber:Держакт_номер -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/StateActForm/Number
+-single:required -info:StateActRegistrationNumber:Держакт_номер -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/StateActRegistrationInfo/RegistrationNumber
+-single:required:helper -info:StateActRegistrationDate:Дата_реєстрації -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/StateActRegistrationInfo/RegistrationDate
+-single:required:helper -info:StateActDeliveryDate:Дата_видачі -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/DeliveryDate
+-single:required -info:EntitlementDocument:Підстава_видачі -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/EntitlementDocument/Document
+-single:required:helper -info:EntitlementDocumentDate:Дата_документа -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/EntitlementDocument/DocumentDate
+-single:required:helper -info:EntitlementDocumentNumber:Номер_документа -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/StateActInfo/EntitlementDocument/DocumentNumber
+
+-group:LandsInfo:Інформація_про_угіддя
+-multiple:required:helper -info:LandParcel:Код_угіддя -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/LandsParcel/LandParcelInfo:LandCode://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/LandsParcel/LandParcelInfo/LandCode
+-multiple:required -info:LandParcel:Площа_угіддя -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/LandsParcel/LandParcelInfo:MetricInfo/Area/Size://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/LandsParcel/LandParcelInfo/MetricInfo/Area/Size
+-multiple:required -info:LandParcel:Одиниці_виміру -xpath://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/LandsParcel/LandParcelInfo:MetricInfo/Area/MeasurementUnit://InfoPart/CadastralZoneInfo/CadastralQuarters/CadastralQuarterInfo/Parcels/ParcelInfo/LandsParcel/LandParcelInfo/MetricInfo/Area/MeasurementUnit

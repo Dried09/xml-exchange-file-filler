@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProprietorInfo>
+  <Authentication>
+    <NaturalPerson>
+      <FullName>
+        <LastName />
+        <FirstName />
+        <MiddleName />
+      </FullName>
+      <TaxNumber />
+      <Passport>
+        <DocumentType />
+        <PassportNumber />
+        <PassportIssuedDate />
+        <IssuanceAuthority />
+        <PassportSeries />
+      </Passport>
+      <Citizenship />
+      <Address>
+        <Country />
+        <Region />
+        <District />
+        <Settlement />
+        <Street />
+        <Building />
+      </Address>
+    </NaturalPerson>
+  </Authentication>
+  <ProprietorCode />
+  <PropertyAcquisitionJustification>
+    <Document />
+    <DocumentDate />
+    <DocumentNumber />
+    <ApprovalAuthority />
+  </PropertyAcquisitionJustification>
+</ProprietorInfo>

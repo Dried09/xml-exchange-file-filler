@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StateActInfo>
+ <StateActType />
+ <StateActForm>
+   <Series />
+   <Number />
+ </StateActForm>
+ <StateActRegistrationInfo>
+   <RegistrationBookNumber />
+   <SectionNumber />
+   <RegistrationNumber />
+   <RegistrationDate />
+   <RegistrationPersonInfo>
+     <SignedByName>
+       <LastName />
+       <FirstName />
+     </SignedByName>
+     <SignedByName>
+       <LastName />
+       <FirstName />
+     </SignedByName>
+     <SignedByPosition />
+     <SignedByPosition />
+     <RegisteredBy>
+       <LastName />
+       <FirstName />
+     </RegisteredBy>
+     <RegisteredByPosition />
+   </RegistrationPersonInfo>
+ </StateActRegistrationInfo>
+ <DeliveryDate />
+ <DeliveryPerson>
+   <NaturalPerson>
+     <FullName>
+       <LastName />
+       <FirstName />
+     </FullName>
+     <Passport>
+       <DocumentType />
+       <PassportNumber />
+       <PassportIssuedDate />
+       <IssuanceAuthority />
+       <PassportSeries />
+     </Passport>
+     <Address>
+       <Country></Country>
+       <Region />
+       <District />
+       <Settlement />
+       <Street />
+       <Building />
+     </Address>
+   </NaturalPerson>
+ </DeliveryPerson>
+ <EntitlementDocument>
+   <Document />
+   <DocumentDate />
+   <DocumentNumber />
+ </EntitlementDocument>
+</StateActInfo>
